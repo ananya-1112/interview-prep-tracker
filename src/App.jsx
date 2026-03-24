@@ -7,6 +7,8 @@ import { useState } from "react";
 function App() {
   const [topics, setTopics] = useState([]);
 
+  const [filter, setFilter] = useState("all");
+
   const addTopic = (newTopic) => {
   const topicObj = {
     text: newTopic,
@@ -32,6 +34,12 @@ const deleteTopic = (indexToDelete) => {
   setTopics(updatedTopics);
 };
 
+const filteredTopics = topics.filter((topic) => {
+  if (filter === "completed") return topic.completed;
+  if (filter === "pending") return !topic.completed;
+  return true;
+});
+
   return (
     <div className="container">
       <Header />
@@ -39,8 +47,14 @@ const deleteTopic = (indexToDelete) => {
 
       <h3>Topics</h3>
 
+       <div>
+  <button style={{ fontWeight: filter === "all" ? "bold" : "normal" }} onClick={() => setFilter("all")}>All</button>
+  <button style={{ fontWeight: filter === "completed" ? "bold" : "normal" }} onClick={() => setFilter("completed")}>Completed</button>
+  <button style={{ fontWeight: filter === "pending" ? "bold" : "normal" }} onClick={() => setFilter("pending")}>Pending</button>
+</div>
+
      <ul>
-  {topics.map((topic, index) => (
+  {filteredTopics.map((topic, index) => (
     <TopicItem
       key={index}
       topic={topic}
@@ -49,6 +63,8 @@ const deleteTopic = (indexToDelete) => {
       toggleComplete={toggleComplete}
     />
   ))}
+
+ 
 </ul>
     </div>
   );
