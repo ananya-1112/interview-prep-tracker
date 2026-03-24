@@ -12,7 +12,15 @@ function TopicItem({ topic, index, deleteTopic, toggleComplete }) {
     {topic.text}
   </span>
 
-  <button onClick={() => deleteTopic(index)}>Delete</button>
+  <button
+  onClick={() => deleteTopic(index)}
+  style={{
+    background: "#ef4444",
+    marginLeft: "10px",
+  }}
+>
+  Delete
+</button>
 </li>
   );
 }
