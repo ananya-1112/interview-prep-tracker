@@ -1,11 +1,15 @@
 import "./styles/app.css";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import TopicForm from "./components/TopicForm";
 import TopicItem from "./components/TopicItem";
-import { useState } from "react";
 
 function App() {
-  const [topics, setTopics] = useState([]);
+
+ const [topics, setTopics] = useState(() => {
+  const savedTopics = localStorage.getItem("topics");
+  return savedTopics ? JSON.parse(savedTopics) : [];
+});
 
   const [filter, setFilter] = useState("all");
 
@@ -39,6 +43,11 @@ const filteredTopics = topics.filter((topic) => {
   if (filter === "pending") return !topic.completed;
   return true;
 });
+
+
+  useEffect(() => {
+  localStorage.setItem("topics", JSON.stringify(topics));
+}, [topics]);
 
   return (
     <div className="container">
