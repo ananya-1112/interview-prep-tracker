@@ -1,4 +1,5 @@
 import "./styles/app.css";
+import ProgressBar from "./components/ProgressBar";
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import TopicForm from "./components/TopicForm";
@@ -44,6 +45,12 @@ const filteredTopics = topics.filter((topic) => {
   return true;
 });
 
+const total = topics.length;
+
+const completed = topics.filter((t) => t.completed).length;
+
+const progress = total === 0 ? 0 : Math.round((completed / total) * 100);
+
 
   useEffect(() => {
   localStorage.setItem("topics", JSON.stringify(topics));
@@ -55,6 +62,14 @@ const filteredTopics = topics.filter((topic) => {
       <TopicForm addTopic={addTopic} />
 
       <h3>Topics</h3>
+
+      <div>
+  <h3>Progress: {progress}%</h3>
+  <ProgressBar progress={progress} />
+  <p>
+    {completed} / {total} topics completed
+  </p>
+</div>
 
        <div>
   <button style={{ fontWeight: filter === "all" ? "bold" : "normal" }} onClick={() => setFilter("all")}>All</button>
