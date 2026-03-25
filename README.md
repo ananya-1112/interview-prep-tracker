@@ -1,16 +1,112 @@
-# React + Vite
+# 📘 Interview Prep Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and interactive React-based web application to track interview preparation topics, monitor progress, and stay consistent.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+* ➕ Add interview topics
+* 🗑️ Delete topics
+* ✅ Mark topics as completed
+* 🔍 Filter topics (All / Completed / Pending)
+* 📊 Progress tracking with percentage and progress bar
+* 💾 Data persistence using localStorage
+* 🎨 Clean and responsive UI
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React (Vite)
+* JavaScript (ES6+)
+* CSS
+* localStorage
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+│
+├── components/
+│   ├── Header.jsx
+│   ├── TopicForm.jsx
+│   ├── TopicList.jsx
+│   ├── TopicItem.jsx
+│   └── ProgressBar.jsx
+│
+├── styles/
+│   └── app.css
+│
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+1. Clone the repository:
+
+```
+git clone <your-repo-link>
+```
+
+2. Navigate to the project folder:
+
+```
+cd interview-prep-tracker
+```
+
+3. Install dependencies:
+
+```
+npm install
+```
+
+4. Run the app:
+
+```
+npm run dev
+```
+
+5. Open in browser:
+
+```
+http://localhost:5173/
+```
+
+---
+
+## 💡 Key Learnings
+
+* React hooks (`useState`, `useEffect`)
+* Component-based architecture
+* Props and state management
+* Conditional rendering
+* Handling user events
+* Persisting data with localStorage
+
+---
+
+## 🌟 Future Improvements
+
+* Edit topics
+* Add deadlines
+* Dark mode
+* Backend integration (Spring Boot / Node.js)
+
+---
+
+## 👩‍💻 Author
+
+**Ananya Mazumder**
+
+---
+
+## 📌 Notes
+
+This project was built as part of frontend practice to strengthen React fundamentals and build a real-world usable application.
+
