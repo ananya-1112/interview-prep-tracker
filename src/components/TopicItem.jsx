@@ -15,7 +15,7 @@ function TopicItem({ topic, index, deleteTopic, toggleComplete }) {
   <button
   onClick={() => deleteTopic(index)}
   style={{
-    background: "#ef4444",
+   background: "var(--danger)",
     marginLeft: "10px",
   }}
 >

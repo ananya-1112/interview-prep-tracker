@@ -4,7 +4,7 @@ function ProgressBar({ progress }) {
       <div
         style={{
           width: `${progress}%`,
-         background: progress > 70 ? "green" : "orange",
+         background: progress > 70 ? "var(--success)" : "var(--primary)",
           height: "100%",
           borderRadius: "5px",
           transition: "0.3s",

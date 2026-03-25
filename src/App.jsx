@@ -63,7 +63,7 @@ const progress = total === 0 ? 0 : Math.round((completed / total) * 100);
 
       <h3>Topics</h3>
 
-      <div style={{ marginBottom: "20px", textAlign: "center" }}>
+      <div className="progress-box" style={{ marginBottom: "20px", textAlign: "center" }}>
   <h3>Progress: {progress}%</h3>
   <ProgressBar progress={progress} />
   <p>
@@ -71,14 +71,14 @@ const progress = total === 0 ? 0 : Math.round((completed / total) * 100);
   </p>
 </div>
 
-       <div style={{ marginBottom: "15px", textAlign: "center" }}>
+       <div style={{ marginBottom: "15px", textAlign: "center", display: "flex",justifyContent: "center",gap: "10px",}}>
   <button style={{ fontWeight: filter === "all" ? "bold" : "normal" }} onClick={() => setFilter("all")}>All</button>
   <button style={{ fontWeight: filter === "completed" ? "bold" : "normal" }} onClick={() => setFilter("completed")}>Completed</button>
   <button style={{ fontWeight: filter === "pending" ? "bold" : "normal" }} onClick={() => setFilter("pending")}>Pending</button>
 </div>
 
      <ul>
-    {filteredTopics.length === 0 && <p>No topics found 🚀</p>}
+    {filteredTopics.length === 0 && <p style={{ textAlign: "center", marginTop: "20px" }}>No topics found 🚀</p>}
   {filteredTopics.map((topic, index) => (
     <TopicItem
       key={index}
